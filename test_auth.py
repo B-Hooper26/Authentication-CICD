@@ -8,5 +8,5 @@ class TestAUth(unittest.TestCase):
         self.assertTrue(authentication("Admin", "Password123"))
         
     def test_invalid_credentials(self):
-        self.assertTrue(authentication("user", "123"))
+        self.assertFalse(authentication("user", "123"))
 
