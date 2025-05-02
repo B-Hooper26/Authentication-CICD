@@ -1,30 +1,23 @@
 name: CI Test Auth App
-
-
-on: 
+ 
+on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
-    
+    branches: [main]
+ 
 jobs:
   test:
     runs-on: ubuntu-latest
-
+ 
     steps:
-      - name: Checkoout code
-        uses: actions/checkout@v2
-
-    steps:
-      - name: Set Up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.9'
-
-    steps:
-      - name: Run tests
-        run: pyton -m unittest discover
-
-
-
-    
+    - name: Checkout code
+      uses: actions/checkout@v2
+ 
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+ 
+    - name: Run tests
+      run: python -m unittest discover
